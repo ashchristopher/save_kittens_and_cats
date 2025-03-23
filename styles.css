@@ -1,0 +1,409 @@
+/* Hello Kitty Inspired CSS for Save Kittens and Cats Website */
+
+:root {
+    --primary-color: #ff66a3;
+    --secondary-color: #ff99cc;
+    --accent-color: #66ccff;
+    --light-color: #fff0f5;
+    --dark-color: #333333;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    background-image: url('./images/paw-pattern.png');
+    background-size: 100px;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/paw-pattern.png');
+    background-size: 100px;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.logo-container {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.logo-container h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+    background-color: var(--primary-color);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Welcome Section */
+#welcome {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.welcome-text {
+    flex: 1;
+}
+
+.welcome-text p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.welcome-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.welcome-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 5px solid var(--secondary-color);
+}
+
+/* Chat Bubble */
+.chat-bubble {
+    position: absolute;
+    top: -80px;
+    left: 70%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    z-index: 1;
+}
+
+.chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
+.chat-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--primary-color);
+    z-index: -1;
+}
+
+/* Facts Section */
+#facts {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.fact-card {
+    background-color: var(--light-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--secondary-color);
+}
+
+.fact-card:hover {
+    transform: translateY(-10px);
+}
+
+.fact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Games Section */
+#games {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: transform 0.3s ease;
+    border: 2px solid var(--secondary-color);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Placeholder for game images */
+.game-placeholder {
+    width: 100%;
+    height: 90px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.game-card h3 {
+    color: var(--primary-color);
+    padding: 15px 15px 5px;
+}
+
+.game-card p {
+    padding: 0 15px 15px;
+}
+
+/* Donate Section */
+#donate {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.donate-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+}
+
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.donate-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border: 2px solid var(--secondary-color);
+}
+
+.donate-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Placeholder for donate images */
+.donate-placeholder {
+    width: 100%;
+    height: 90px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.donate-card h3 {
+    color: var(--primary-color);
+    padding: 15px 15px 5px;
+}
+
+.donate-card p {
+    padding: 5px 15px 15px;
+}
+
+.donate-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 10px 0 20px;
+    transition: all 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Hello Kitty Decorative Elements */
+.section::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url('./images/bow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-content {
+        flex-direction: column;
+    }
+    
+    .facts-grid, .games-grid, .donate-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section::before {
+        display: none;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+} 
