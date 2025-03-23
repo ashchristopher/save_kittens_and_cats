@@ -381,13 +381,62 @@ nav ul li a:hover {
     left: 20px;
 }
 
+/* Videos Section */
+#videos {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.video-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: transform 0.3s ease;
+    border: 2px solid var(--secondary-color);
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Placeholder for video thumbnails */
+.video-placeholder {
+    width: 100%;
+    height: 90px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.video-card h3 {
+    color: var(--primary-color);
+    padding: 15px 15px 5px;
+}
+
+.video-card p {
+    padding: 0 15px 15px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .welcome-content {
         flex-direction: column;
     }
     
-    .facts-grid, .games-grid, .donate-grid {
+    .facts-grid, .games-grid, .videos-grid, .donate-grid {
         grid-template-columns: 1fr;
     }
     
